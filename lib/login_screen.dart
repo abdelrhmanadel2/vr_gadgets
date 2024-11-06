@@ -112,18 +112,17 @@ class _LoginScreenState extends State<LoginScreen> {
                             backgroundColor: Colors.transparent,
                             buttonColor: Colors.green.shade800,
                             action: () async {
-                              Navigator.of(context).push(
+                              Navigator.of(context).pushReplacement(
                                 MaterialPageRoute<void>(
-                                  builder: (BuildContext context) =>
-                                      const LoginWithImageScreen(),
-                                ),
+                                    builder: (BuildContext context) =>
+                                        const LoginWithImageScreen()),
                               );
                               return false;
                             },
                             buttonSize: 30,
                             height: 45,
                             label: const Text(
-                              "Get Started >>>>",
+                              "Get Started",
                               style: TextStyle(color: Colors.white),
                             ),
                             icon: Icon(

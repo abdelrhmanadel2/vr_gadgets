@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:vr_gadgets/login_screen.dart';
 import 'package:vr_gadgets/login_with_image.dart';
 // import 'package:vr_gadgets/login_screen.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:vr_gadgets/store_page.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();

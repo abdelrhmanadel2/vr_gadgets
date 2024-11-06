@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:video_player/video_player.dart';
 import 'package:slider_button/slider_button.dart';
 import 'package:vr_gadgets/login_screen.dart';
+import 'package:vr_gadgets/store_page.dart';
 
 class LoginWithImageScreen extends StatefulWidget {
   const LoginWithImageScreen({super.key});
@@ -86,7 +87,7 @@ class _LoginWithImageScreenState extends State<LoginWithImageScreen> {
                               Navigator.of(context).push(
                                 MaterialPageRoute<void>(
                                   builder: (BuildContext context) =>
-                                      const LoginScreen(),
+                                      const StorePage(),
                                 ),
                               );
                               return false;
