@@ -31,7 +31,8 @@ class GadgetCard extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             ClipRRect(
-              borderRadius: BorderRadius.vertical(top: Radius.circular(12)),
+              borderRadius:
+                  const BorderRadius.vertical(top: Radius.circular(12)),
               child: Image.asset(
                 imageUrl,
                 height: 100,
@@ -44,7 +45,7 @@ class GadgetCard extends StatelessWidget {
               child: Text(
                 title,
                 maxLines: 1,
-                style: TextStyle(fontWeight: FontWeight.bold),
+                style: const TextStyle(fontWeight: FontWeight.bold),
               ),
             ),
             Padding(
@@ -53,34 +54,38 @@ class GadgetCard extends StatelessWidget {
                   style: textTheme.labelSmall?.copyWith(
                       fontWeight: FontWeight.bold, color: Colors.grey)),
             ),
+            SizedBox(height: 5),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 8.0),
               child: Text('\$${price.toInt()}',
                   style: textTheme.bodyLarge
                       ?.copyWith(fontWeight: FontWeight.bold, fontSize: 20)),
             ),
+
             // Spacer(),
           ],
         ),
-        Positioned(right: 0, child: FavButton()),
+        const Positioned(right: 0, child: FavButton()),
         Positioned(
-          bottom: -5,
-          right: -1,
+          bottom: -10,
+          right: -5,
           child: ElevatedButton(
             onPressed: () {
               // Add to cart action
             },
-            style: ButtonStyle(
+            style: const ButtonStyle(
               backgroundColor: WidgetStatePropertyAll(Color(0xFF125945)),
               // backgroundColor: Color(0xFF1A5E3D),
               // padding: EdgeInsets.all(5),
+              padding: WidgetStatePropertyAll(EdgeInsets.all(0)),
               shape: WidgetStatePropertyAll(RoundedRectangleBorder(
                   borderRadius: BorderRadius.only(
                 topLeft: Radius.circular(5),
               ))),
+
               fixedSize: WidgetStatePropertyAll(Size(40, 40)),
             ),
-            child: Icon(
+            child: const Icon(
               Icons.add,
               color: Colors.white,
             ),

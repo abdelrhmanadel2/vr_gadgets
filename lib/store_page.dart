@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:vr_gadgets/collection_screen.dart';
 
 class StorePage extends StatelessWidget {
@@ -8,7 +7,9 @@ class StorePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var textTheme = Theme.of(context).textTheme;
-
+    var size = MediaQuery.of(context).size;
+    final double itemHeight = (size.height - kToolbarHeight - 24) / 4;
+    final double itemWidth = (size.width - 50) / 2;
     return Scaffold(
       extendBodyBehindAppBar: true,
       appBar: AppBar(
@@ -123,13 +124,12 @@ class StorePage extends StatelessWidget {
               Expanded(
                 child: GridView.builder(
                     itemCount: 4,
-                    gridDelegate:
-                        const SliverGridDelegateWithFixedCrossAxisCount(
-                            crossAxisCount: 2,
-                            childAspectRatio: 1 / 1.11,
-                            // mainAxisExtent: 165,
-                            mainAxisSpacing: 40,
-                            crossAxisSpacing: 20),
+                    gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                        crossAxisCount: 2,
+                        childAspectRatio: (itemWidth / itemHeight),
+                        // mainAxisExtent: 165,
+                        mainAxisSpacing: 40,
+                        crossAxisSpacing: 20),
                     itemBuilder: (context, index) {
                       return GadgetCard(
                           title: index == 0
